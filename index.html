@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>	HOME | Events Ticket App</title>
+        
+        <link rel="stylesheet" href="main.css" media="screen">
+    </head>
+    <body>
+        <div id="main_container">
+            <header class="main_header">
+                    <div class="right_header">
+                    <a href="#" ><span class="button_top">Sign Up</span></a> |
+                     <a href="#"><span class="button_top">Log In</span></a>
+            
+                    </div>
+                    <a href="index.html"><img src="images/logo.png" >
+                        <h2 >Events Ticket App</h2></a>
+                    
+            </header>
+            <div id="search_form">
+                    <ul class="menu">
+                        <li><a href="index.html" >Home</a></li>	
+                        <li><a href="#" >Services</a></li>
+                        <li><a href="#" >Contact US</a></li>
+                        <li><a href="#" >FAQS</a></li>
+                    </ul>
+                    <form name="input" action="" method="get" id="form">                    
+                        <input type="text" id="keywords" name="keywords"  class="searchBox" placeholder="Search keywords">                        
+                        <input type="submit" value="Search" class="button" />
+                    </form>
+            </div>
+            <aside id="left_content">
+                    <img src="images/sign.jpg" />
+            </aside>
+            <section id="right_content">
+                <form id="Registerform" class="container" method="POST" action="">
+                    <h3>Sign up</h3>
+                    <div class="field">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" class="input" id="firstname" name="firstname" maxlength="20"/>					
+                    </div>
+                    <div class="field">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" class="input" id="lastname" name="lastname" maxlength="20"/>					
+                    </div>                    
+                    <div class="field">
+                        <label for="email">Email:</label>
+                        <input type="email" class="input" id="email" name="email" maxlength="80"/>
+                    </div>
+                    <div class="field">
+                        <label for="password">Password:</label>
+                        <input type="password" class="input" id="password" name="password" maxlength="20"/>
+                       
+                    </div>
+                   
+                    
+                    <input type="submit" name="submit" id="submit" class="button" value="Submit"/>
+                </form>
+            </section>
+            <footer class="footer">    
+                    <div class="">
+                          <p class="copyright">Copyright &copy; 2018 <a href="index.html">Events Ticket App </a></p>
+                          <p class="developer"><a href="#">Developed By OS</a></p>
+                    </div>
+            </footer>
+            
+        </div>
+    </body>
+
+</html>
