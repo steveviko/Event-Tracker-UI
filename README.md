@@ -12,7 +12,7 @@ Setup/Installation Requirements
 -Browser of your choice
 ``` 
  Tools
- 
+  ```
 ●	Server-Side Framework: <Flask Python Framework>
 ●	Linting Library: <Pylint, a Python Linting Library>
 ●	Style Guide: <PEP8 Style Guide>
