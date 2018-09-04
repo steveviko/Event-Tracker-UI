@@ -186,6 +186,9 @@ a:active{
 	float: left;
 	border:1px solid #b9bdc1;
 }
+#left_content img{
+	width:100%;
+}
 #right_content{
 	margin-top: 10px;
 	margin-bottom:20px;
