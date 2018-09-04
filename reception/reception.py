@@ -1,29 +1,27 @@
-Ordinary_list=[]
-Vip_list =[]
+import os
 
-#check username from guest list  
-def registration_checker(name):
+# read from file
+def read_file(file_to_read):
+    # define empty list   
+    names = []
+    # open file and read the content in a list
+    with open('file_to_read', 'r') as vip:  
+     names = [current_name.rstrip() for current_name in vip.readlines()]
+    
+    return names
 
-    guest_list_ordinary =open('odinary_list.txt', 'r')
-    for guest in guest_list_ordinary:
-        Ordinary_list.append(guest.strip())
+    # prompt user for their name
+def get_user_input():
+    names = read_file('vip_list.txt')
+    username = input('Username: ')
+    new_name = username   
+    
+    print(new_name)
 
-    guest_list_vip =open('vip_list.txt', 'r')
-    for guest in guest_list_vip:
-        Vip_list.append(guest.strip())
-
-    name =input("please enter guest name")
-
-    if name ==0:
-        print(" please enter a name ")
+    if username in names:
+        print('On vip guest lists')
     else:
-        guest_name=[g for g in Vip_list if name.lower() == g.lower()]
-        ordinary_name=[g for g in Ordinary_list if name.lower() == g.lower()]
-        if guest_name:
-            print(guest_name[0], "on vip") 
-        elif ordinary_name:
-            print(ordinary_name[0],"on ordinary list")
-        else:
-            print("not a guest")
+        print('on Odinary lists')
+    return ''
 
-
+get_user_input()
