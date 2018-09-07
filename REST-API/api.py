@@ -12,9 +12,9 @@ def get_all_users():
 
 @app.route("/api/add", methods=['POST'])
 def add_users():
-    return users.post_user(username="",password="")
+    return users.post_user()
 
-@app.route("/api/delete/<string:username>", methods=['DELETE'])
+@app.route("/api/delete/<string:name>", methods=['DELETE'])
 def delete_user():
     return users.delete_user()
 
