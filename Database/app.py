@@ -1,6 +1,5 @@
 from database import DatabaseConnection
 
 db= DatabaseConnection()
-print(db)
-
-db.doQuery()
+#db.doQuery
+db.create_tables()
