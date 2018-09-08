@@ -23,7 +23,62 @@ class DatabaseConnection:
         for firstname, lastname in cur.fetchall() :
             print (firstname, lastname)
 
-   
+    def create_tables(self):
+
+        # create tables in the level_up database
+        commands = (
+            """
+            CREATE TABLE Users(
+                user_id INTEGER PRIMARY KEY,
+                first_name VARCHAR(255) NOT NULL,
+                last_name VARCHAR(255) NOT NULL,
+                age VARCHAR(255) NOT NULL,
+                email VARCHAR(255) NOT NULL,
+                password VARCHAR(255) NOT NULL,
+                Created_at VARCHAR(255) NOT NULL DEFAULT CURRENT_TIMESTAMP
+            
+            )
+            """,
+            """ CREATE TABLE Event (
+                    event_id INTEGER PRIMARY KEY,
+                    event_name VARCHAR(255) NOT NULL,
+                    price VARCHAR(255) NOT NULL,
+                    location VARCHAR(255) NOT NULL
+                    )
+            """,
+           
+            """
+            CREATE TABLE Ticket (
+                    Ticket_id INTEGER PRIMARY KEY,
+                    event_id INTEGER NOT NULL,
+                    user_id INTEGER NOT NULL,
+                    is_valid VARCHAR(255) NOT NULL,
+                    verification_code VARCHAR(255) NOT NULL,
+                    Created_at VARCHAR(255)  NOT NULL DEFAULT CURRENT_TIMESTAMP,                    
+                    FOREIGN KEY (user_id)
+                        REFERENCES Users (user_id)
+                        ON UPDATE CASCADE ON DELETE CASCADE,
+                    FOREIGN KEY (event_id)
+                        REFERENCES Event (event_id)
+                        ON UPDATE CASCADE ON DELETE CASCADE
+            )
+            """)
+        try:
+            cur = self.myConnection.cursor()
+            # create table one at a time
+            for command in commands:
+                cur.execute(command)
+            # close communication with the level_up database server
+            cur.close()
+            # commit the changes
+            self.myConnection.commit()
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+        finally:
+            if self.myConnection is not None:
+                self.myConnection.close()
+        
+    
        
         
     
