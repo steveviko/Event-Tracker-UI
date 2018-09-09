@@ -22,6 +22,21 @@ class DatabaseConnection:
 
         for firstname, lastname in cur.fetchall() :
             print (firstname, lastname)
+    
+    def create_user(self):
+        
+        sql = "INSERT INTO Users(user_id,first_name,last_name,age,email,password,Created_at) VALUES (1, 'Paul','Musa', 32, 'pmusa@gmail', 'musa',DEFAULT)"
+        try:
+
+            cur = self.myConnection.cursor()
+            # execute the INSERT statement
+            cur.execute(sql)
+             # commit the changes to the db
+            self.myConnection.commit()
+            # close communication with the database
+            cur.close()
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
 
     def create_tables(self):
 
