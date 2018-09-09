@@ -38,6 +38,21 @@ class DatabaseConnection:
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
 
+    def insert_into_event(self):
+        
+        sql = "INSERT INTO Event(event_id,event_name,location,price) VALUES (1, 'john and mary wedding day','kampala', 15000)"
+        try:
+
+            cur = self.myConnection.cursor()
+            # execute the INSERT statement
+            cur.execute(sql)
+             # commit the changes to the db
+            self.myConnection.commit()
+            # close communication with the database
+            cur.close()
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+
     def create_tables(self):
 
         # create tables in the level_up database
