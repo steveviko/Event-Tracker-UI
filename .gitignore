@@ -1,7 +1,8 @@
-/app/__pycache__/
+/app/__pycache__
 /.vscode/
 .idea/
 .venv/
-/tests/__pycache__/
-
+/tests/__pycache__
+/REST-API/__pycache__
+/Database/__pycache__
 
